@@ -59,24 +59,42 @@ struct HomeView: View {
                     .foregroundColor(.white)
                     .cornerRadius(15)
                 }
+                .font(.title)
                 
                 Spacer()
                 
                 //A picker to select the acitivity user wants to do
                 Picker(selection: .constant(0),
-                       label: Text("Choose Activity"),
+                       label: Text("Activity"),
                        content: {
+                    
                     Text("Choose Activity").tag(0)
                     Text("Running").tag(1)
-                    Text("Walking").tag(2)
+                    Text("Hiking").tag(2)
                     Text("Swimming").tag(3)
                     Text("Casual").tag(4)
+                    
                 })
-                .pickerStyle(.menu)
+                .pickerStyle(.wheel)
+                .border(Color.black)
+                .padding(.horizontal)
 
                 Spacer()
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text("Generate Recommendation")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                        .font(.title2)
+                })
+                
+                Spacer()
+                
             }
-            
                 .navigationTitle("Home")
         }
     }
