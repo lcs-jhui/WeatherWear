@@ -38,7 +38,29 @@ struct HomeView: View {
                 
                 Spacer()
                 
+                //Shows the High and Low as well as humidity
+                HStack{
+                    
+                    VStack{
+                        Text("Sunny")
+                        Text("H: 26 L:13")
+                    }
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(15)
+                    
+                    VStack{
+                        Text("Humidity:")
+                        Text("44%")
+                    }
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(15)
+                }
                 
+                Spacer()
                 
             }
             
