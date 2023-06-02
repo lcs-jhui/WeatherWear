@@ -62,6 +62,19 @@ struct HomeView: View {
                 
                 Spacer()
                 
+                //A picker to select the acitivity user wants to do
+                Picker(selection: .constant(0),
+                       label: Text("Choose Activity"),
+                       content: {
+                    Text("Choose Activity").tag(0)
+                    Text("Running").tag(1)
+                    Text("Walking").tag(2)
+                    Text("Swimming").tag(3)
+                    Text("Casual").tag(4)
+                })
+                .pickerStyle(.menu)
+
+                Spacer()
             }
             
                 .navigationTitle("Home")
