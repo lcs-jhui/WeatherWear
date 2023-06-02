@@ -9,7 +9,31 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            
+            VStack{
+                
+                //Shows the location
+                HStack{
+                    Image(systemName: "location.fill")
+                    Text("Lakefield, ON")
+                }
+                .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
+                .foregroundColor(.white)
+                .background(.blue)
+                .cornerRadius(.infinity)
+                
+                Spacer()
+                
+                //A system image of the weather and the degrees in celsius
+                HStack{
+                    Image(systemName: "sun.max")
+                }
+                
+            }
+            
+                .navigationTitle("Home")
+        }
     }
 }
 
