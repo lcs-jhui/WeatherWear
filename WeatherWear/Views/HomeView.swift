@@ -16,6 +16,7 @@ struct HomeView: View {
                 //Shows the location
                 HStack{
                     Image(systemName: "location.fill")
+                    
                     Text("Lakefield, ON")
                 }
                 .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
@@ -28,7 +29,16 @@ struct HomeView: View {
                 //A system image of the weather and the degrees in celsius
                 HStack{
                     Image(systemName: "sun.max")
+                        .padding()
+                    
+                    Text("26℃")
+                        .padding()
                 }
+                .font(.largeTitle)
+                
+                Spacer()
+                
+                
                 
             }
             
