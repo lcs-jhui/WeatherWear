@@ -27,7 +27,7 @@ struct OutfitView: View {
                     Text("\(currentDate.formatted(date: .complete, time: .omitted))")
                         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                         .foregroundColor(.white)
-                        .background(.blue)
+                        .background(Color("MainColor"))
                         .cornerRadius(.infinity)
                         .font(.title3)
 
@@ -36,12 +36,12 @@ struct OutfitView: View {
                         Text("\(weatherToShow.description) 😎")
                             .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                             .foregroundColor(.white)
-                            .background(.blue)
+                            .background(Color("MainColor"))
                             .cornerRadius(.infinity)
                         Text("Wind Speed: \(weatherToShow.wind)")
                             .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                             .foregroundColor(.white)
-                            .background(.blue)
+                            .background(Color("MainColor"))
                             .cornerRadius(.infinity)
                     }
 
