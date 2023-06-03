@@ -39,12 +39,12 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                //Shows the High and Low as well as humidity
+                //Shows the description as well as wind speed
                 HStack{
                     
                     VStack{
                         Text("Sunny")
-                        Text("H: 26 L:13")
+                        Text("😎")
                     }
                     .padding()
                     .background(.blue)
@@ -52,8 +52,8 @@ struct HomeView: View {
                     .cornerRadius(15)
                     
                     VStack{
-                        Text("Humidity:")
-                        Text("44%")
+                        Text("Wind Speed:")
+                        Text("19 km/h")
                     }
                     .padding()
                     .background(.blue)

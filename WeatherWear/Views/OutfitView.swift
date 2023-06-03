@@ -23,12 +23,12 @@ struct OutfitView: View {
                 
                 //Show humidity and precipitation
                 HStack{
-                    Text("Humidity: 44%")
+                    Text("Sunny 😎")
                         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                         .foregroundColor(.white)
                         .background(.blue)
                         .cornerRadius(.infinity)
-                    Text("Precipitation: 0mm")
+                    Text("Wind Speed: 19km/h")
                         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                         .foregroundColor(.white)
                         .background(.blue)
