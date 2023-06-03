@@ -11,6 +11,7 @@ struct OutfitView: View {
     
     //MARK: Stored Properties
     
+    @State var currentDate: Date = Date()
     @State var currentWeather = exampleWeather
     
     //MARK: Computed Properties
@@ -20,7 +21,7 @@ struct OutfitView: View {
             VStack{
                 
                 //Show the date
-                Text("Monday, 29th May")
+                Text("\(currentDate.formatted(date: .complete, time: .omitted))")
                     .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                     .foregroundColor(.white)
                     .background(.blue)
