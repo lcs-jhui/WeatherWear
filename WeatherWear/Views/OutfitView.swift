@@ -87,22 +87,21 @@ struct OutfitView: View {
 
                     Spacer()
 
-                    Button(action: {
-
-                    }, label: {
-                        Text("Back To Home")
-                            .padding()
-                            .foregroundColor(Color.white)
-                            .background(Color.blue)
-                            .cornerRadius(8)
-                            .font(.title2)
-                    })
+                NavigationLink(destination: {
+                    HomeView()
+                }, label: {
+                    Text("Back To Home")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color("MainColor"))
+                        .cornerRadius(8)
+                        .font(.title2)
+                })
 
                     Spacer()
 
             }
 
-            .navigationTitle("Outfit")
         }
        
     }

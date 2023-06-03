@@ -115,8 +115,8 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        
+                    NavigationLink(destination: {
+                        OutfitView(weatherToShow: currentWeather)
                     }, label: {
                         Text("Generate Recommendation")
                             .padding()
