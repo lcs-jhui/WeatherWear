@@ -24,28 +24,41 @@ struct HomeView: View {
             
             VStack{
                 
-                if let currentWeather = currentWeather {
+                
+                //Shows the location
+                HStack{
+                    Image(systemName: "location.fill")
                     
-                    //Shows the location
-                    HStack{
-                        Image(systemName: "location.fill")
-                        
-                        TextField("Input City Here", text: $location)
+                    TextField("", text: $location, prompt: Text("Input City Here").foregroundColor(.white))
+                }
+                .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
+                .foregroundColor(.white)
+                .background(Color("MainColor"))
+                .cornerRadius(.infinity)
+                .padding(.horizontal)
+                
+                Button(action: {
+                    
+                    Task {
+                        currentWeather = await NetworkService.fetch(forLocation: location)
                     }
-                    .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
-                    .foregroundColor(.white)
-                    .background(.blue)
-                    .cornerRadius(.infinity)
-                    .padding(.horizontal)
-                    
-                    Spacer()
+
+                }, label: {
+                    Text("Enter")
+                })
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                
+                Spacer()
+                
+                if let currentWeather = currentWeather {
                     
                     //A system image of the weather and the degrees in celsius
                     HStack{
                         Image(systemName: "sun.max")
                             .padding()
                         
-                        Text("26℃")
+                        Text(currentWeather.temperature)
                             .padding()
                     }
                     .font(.largeTitle)
@@ -64,6 +77,7 @@ struct HomeView: View {
                         .background(.blue)
                         .foregroundColor(.white)
                         .cornerRadius(15)
+                        .font(.title2)
                         
                         VStack{
                             Text("Wind Speed:")
@@ -73,6 +87,7 @@ struct HomeView: View {
                         .background(.blue)
                         .foregroundColor(.white)
                         .cornerRadius(15)
+                        .font(.title2)
                     }
                     .font(.title)
                     
@@ -111,16 +126,13 @@ struct HomeView: View {
                     
                 }else{
                     
-                    ProgressView()
+                    Text("Please Provide Valid Location")
+                    Spacer()
                     
                 }
                 
             }
-                .navigationTitle("Home")
-        }
-        //asynchronos task to be performed as the view appears
-        .task{
-            currentWeather = await NetworkService.fetch()
+            .navigationTitle("Home")
         }
     }
 }
