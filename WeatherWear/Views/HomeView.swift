@@ -74,7 +74,7 @@ struct HomeView: View {
                             Text("😎")
                         }
                         .padding()
-                        .background(.blue)
+                        .background(Color("MainColor"))
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .font(.title2)
@@ -84,7 +84,7 @@ struct HomeView: View {
                             Text(currentWeather.wind)
                         }
                         .padding()
-                        .background(.blue)
+                        .background(Color("MainColor"))
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .font(.title2)
@@ -117,7 +117,7 @@ struct HomeView: View {
                         Text("Generate Recommendation")
                             .padding()
                             .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .background(Color("MainColor"))
                             .cornerRadius(8)
                             .font(.title2)
                     })
