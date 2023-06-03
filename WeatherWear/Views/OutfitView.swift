@@ -21,6 +21,7 @@ struct OutfitView: View {
                     .cornerRadius(.infinity)
                     .font(.title3)
                 
+                //Show humidity and precipitation
                 HStack{
                     Text("Humidity: 44%")
                         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
@@ -33,6 +34,61 @@ struct OutfitView: View {
                         .background(.blue)
                         .cornerRadius(.infinity)
                 }
+                
+                Spacer()
+                
+                //Show the outfit items and temperature
+                HStack{
+                    Image(systemName: "sun.max")
+                        .padding()
+                    
+                    Text("26℃")
+                        .padding()
+                }
+                .bold()
+                .font(.largeTitle)
+        
+                HStack{
+                    
+                    VStack{
+                        Text("Item 1")
+                            .padding()
+                        
+                        Text("Item 2")
+                            .padding()
+                        
+                        Text("Item 3")
+                            .padding()
+                    }
+                    
+                    VStack{
+                        Text("Item 4")
+                            .padding()
+                        
+                        Text("Item 5")
+                            .padding()
+                        
+                    }
+                    
+                }
+                .padding()
+                .font(.largeTitle)
+                .border(Color.black)
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text("Back To Home")
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                        .font(.title2)
+                })
+                
+                Spacer()
                 
             }
             
