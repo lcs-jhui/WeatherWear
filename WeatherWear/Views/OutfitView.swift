@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct OutfitView: View {
+    
+    //MARK: Stored Properties
+    
+    @State var currentWeather = exampleWeather
+    
+    //MARK: Computed Properties
     var body: some View {
         NavigationView{
             
@@ -23,12 +29,12 @@ struct OutfitView: View {
                 
                 //Show humidity and precipitation
                 HStack{
-                    Text("Sunny 😎")
+                    Text("\(currentWeather.description) 😎")
                         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                         .foregroundColor(.white)
                         .background(.blue)
                         .cornerRadius(.infinity)
-                    Text("Wind Speed: 19km/h")
+                    Text("Wind Speed: \(currentWeather.wind)")
                         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                         .foregroundColor(.white)
                         .background(.blue)
@@ -42,7 +48,7 @@ struct OutfitView: View {
                     Image(systemName: "sun.max")
                         .padding()
                     
-                    Text("26℃")
+                    Text(currentWeather.temperature)
                         .padding()
                 }
                 .bold()

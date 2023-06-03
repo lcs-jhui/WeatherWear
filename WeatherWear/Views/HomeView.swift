@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    //MARK: Stored Properties
+    
+    //current weather on dispaly
+    @State var currentWeather = exampleWeather
+    
+    //MARK: Computed Properties
+    
     var body: some View {
         NavigationView{
             
@@ -43,7 +51,7 @@ struct HomeView: View {
                 HStack{
                     
                     VStack{
-                        Text("Sunny")
+                        Text(currentWeather.description)
                         Text("😎")
                     }
                     .padding()
@@ -53,7 +61,7 @@ struct HomeView: View {
                     
                     VStack{
                         Text("Wind Speed:")
-                        Text("19 km/h")
+                        Text(currentWeather.wind)
                     }
                     .padding()
                     .background(.blue)
