@@ -30,6 +30,20 @@ struct HomeView: View {
                     Image(systemName: "location.fill")
                     
                     TextField("", text: $location, prompt: Text("Input City Here").foregroundColor(.white))
+                    
+                    Button(action: {
+                        
+                        Task {
+                            currentWeather = await NetworkService.fetch(forLocation: location)
+                        }
+
+                    }, label: {
+                        Text("Enter")
+                    })
+                    .buttonStyle(.borderedProminent)
+                    .tint(.green)
+                    .cornerRadius(.infinity)
+                    
                 }
                 .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
                 .foregroundColor(.white)
@@ -37,17 +51,7 @@ struct HomeView: View {
                 .cornerRadius(.infinity)
                 .padding(.horizontal)
                 
-                Button(action: {
-                    
-                    Task {
-                        currentWeather = await NetworkService.fetch(forLocation: location)
-                    }
-
-                }, label: {
-                    Text("Enter")
-                })
-                .buttonStyle(.borderedProminent)
-                .tint(.green)
+               
                 
                 Spacer()
                 
