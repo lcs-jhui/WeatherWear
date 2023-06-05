@@ -87,18 +87,7 @@ struct OutfitView: View {
 
                     Spacer()
 
-                NavigationLink(destination: {
-                    HomeView()
-                }, label: {
-                    Text("Back To Home")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color("MainColor"))
-                        .cornerRadius(8)
-                        .font(.title2)
-                })
-
-                    Spacer()
+                
 
             }
 

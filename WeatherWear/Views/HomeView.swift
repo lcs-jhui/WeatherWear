@@ -18,7 +18,6 @@ struct HomeView: View {
     @State var location = ""
     
     //MARK: Computed Properties
-    
     var body: some View {
         NavigationView{
             
