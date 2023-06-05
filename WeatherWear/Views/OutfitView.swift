@@ -46,48 +46,60 @@ struct OutfitView: View {
                     }
 
                     Spacer()
+                
+                //Show temperature
+                HStack{
+                    Image(systemName: "sun.max")
+                        .padding()
 
-                    //Show the outfit items and temperature
-                    HStack{
-                        Image(systemName: "sun.max")
-                            .padding()
+                    Text(weatherToShow.temperature)
+                        .padding()
+                }
+                .bold()
+                .font(.largeTitle)
+                
+                
+                
 
-                        Text(weatherToShow.temperature)
-                            .padding()
-                    }
-                    .bold()
-                    .font(.largeTitle)
-
-                    HStack{
-
-                        VStack{
-                            Text("Item 1")
-                                .padding()
-
-                            Text("Item 2")
-                                .padding()
-
-                            Text("Item 3")
-                                .padding()
-                        }
-
-                        VStack{
-                            Text("Item 4")
-                                .padding()
-
-                            Text("Item 5")
-                                .padding()
-
-                        }
-
-                    }
-                    .padding()
-                    .font(.largeTitle)
-                    .border(Color.black)
+//                    //Show the outfit items and temperature
+//                    HStack{
+//                        Image(systemName: "sun.max")
+//                            .padding()
+//
+//                        Text(weatherToShow.temperature)
+//                            .padding()
+//                    }
+//                    .bold()
+//                    .font(.largeTitle)
+//
+//                    HStack{
+//
+//                        VStack{
+//                            Text("Item 1")
+//                                .padding()
+//
+//                            Text("Item 2")
+//                                .padding()
+//
+//                            Text("Item 3")
+//                                .padding()
+//                        }
+//
+//                        VStack{
+//                            Text("Item 4")
+//                                .padding()
+//
+//                            Text("Item 5")
+//                                .padding()
+//
+//                        }
+//
+//                    }
+//                    .padding()
+//                    .font(.largeTitle)
+//                    .border(Color.black)
 
                     Spacer()
-
-                
 
             }
 

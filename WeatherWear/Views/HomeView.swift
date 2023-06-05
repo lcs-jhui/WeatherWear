@@ -17,11 +17,14 @@ struct HomeView: View {
     //User can input their location
     @State var location = ""
     
+    @State var currentDate: Date = Date()
+    
     //MARK: Computed Properties
     var body: some View {
         NavigationView{
             
             VStack{
+                
                 
                 
                 //Shows the location
@@ -35,7 +38,7 @@ struct HomeView: View {
                         Task {
                             currentWeather = await NetworkService.fetch(forLocation: location)
                         }
-
+                        
                     }, label: {
                         Text("Enter")
                     })
@@ -50,22 +53,28 @@ struct HomeView: View {
                 .cornerRadius(.infinity)
                 .padding(.horizontal)
                 
-               
+                
                 
                 Spacer()
                 
                 if let currentWeather = currentWeather {
                     
+                    
+                    //Show the date
+                    Text("\(currentDate.formatted(date: .complete, time: .omitted))")
+                        .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+                        .foregroundColor(.white)
+                        .background(Color("MainColor"))
+                        .cornerRadius(.infinity)
+                        .font(.title3)
+                    
+                    Spacer()
+                    
                     //A system image of the weather and the degrees in celsius
-                    HStack{
-                        Image(systemName: "sun.max")
-                            .padding()
-                        
-                        Text(currentWeather.temperature)
-                            .padding()
-                    }
-                    .font(.largeTitle)
-                    .bold()
+                    Text(currentWeather.temperature)
+                        .padding()
+                        .font(.largeTitle)
+                        .bold()
                     
                     Spacer()
                     
@@ -74,7 +83,7 @@ struct HomeView: View {
                         
                         VStack{
                             Text(currentWeather.description)
-                            Text("😎")
+                            Image(systemName: "sun.max")
                         }
                         .padding()
                         .background(Color("MainColor"))
@@ -96,31 +105,31 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    //A picker to select the acitivity user wants to do
-                    Picker(selection: .constant(0),
-                           label: Text("Activity"),
-                           content: {
-                        
-                        Text("Choose Activity").tag(0)
-                        Text("Running").tag(1)
-                        Text("Hiking").tag(2)
-                        Text("Swimming").tag(3)
-                        Text("Casual").tag(4)
-                        
-                    })
-                    .pickerStyle(.wheel)
-                    .border(Color.black)
-                    .padding(.horizontal)
+                    //                    //A picker to select the acitivity user wants to do
+                    //                    Picker(selection: .constant(0),
+                    //                           label: Text("Activity"),
+                    //                           content: {
+                    //
+                    //                        Text("Choose Activity").tag(0)
+                    //                        Text("Running").tag(1)
+                    //                        Text("Hiking").tag(2)
+                    //                        Text("Swimming").tag(3)
+                    //                        Text("Casual").tag(4)
+                    //
+                    //                    })
+                    //                    .pickerStyle(.wheel)
+                    //                    .border(Color.black)
+                    //                    .padding(.horizontal)
                     
                     Spacer()
                     
                     NavigationLink(destination: {
                         OutfitView(weatherToShow: currentWeather)
                     }, label: {
-                        Text("Generate Recommendation")
+                        Text("Suggest Activites")
                             .padding()
                             .foregroundColor(Color.white)
-                            .background(Color("MainColor"))
+                            .background(Color.green)
                             .cornerRadius(8)
                             .font(.title2)
                     })
