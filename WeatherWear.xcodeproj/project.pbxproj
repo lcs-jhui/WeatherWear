@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90323E72A2FAF7700C0245B /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = B90323E62A2FAF7700C0245B /* Blackbird */; };
+		B90323EA2A2FAFBF00C0245B /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90323E92A2FAFBF00C0245B /* AppDatabase.swift */; };
 		B9042F482A2A20680092FB1A /* WeatherWearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9042F472A2A20680092FB1A /* WeatherWearApp.swift */; };
 		B9042F4C2A2A206A0092FB1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9042F4B2A2A206A0092FB1A /* Assets.xcassets */; };
 		B9042F4F2A2A206A0092FB1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9042F4E2A2A206A0092FB1A /* Preview Assets.xcassets */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90323E92A2FAFBF00C0245B /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		B9042F442A2A20680092FB1A /* WeatherWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9042F472A2A20680092FB1A /* WeatherWearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWearApp.swift; sourceTree = "<group>"; };
 		B9042F4B2A2A206A0092FB1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,12 +37,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90323E72A2FAF7700C0245B /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90323E82A2FAFA100C0245B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B90323E92A2FAFBF00C0245B /* AppDatabase.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B9042F3B2A2A20680092FB1A = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				B9042F472A2A20680092FB1A /* WeatherWearApp.swift */,
+				B90323E82A2FAFA100C0245B /* Helpers */,
 				B949ADA32A2B96FC00129785 /* Services */,
 				B949ADA02A2B939800129785 /* Model */,
 				B9042F592A2A21480092FB1A /* Views */,
@@ -119,6 +132,9 @@
 			dependencies = (
 			);
 			name = WeatherWear;
+			packageProductDependencies = (
+				B90323E62A2FAF7700C0245B /* Blackbird */,
+			);
 			productName = WeatherWear;
 			productReference = B9042F442A2A20680092FB1A /* WeatherWear.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +163,9 @@
 				Base,
 			);
 			mainGroup = B9042F3B2A2A20680092FB1A;
+			packageReferences = (
+				B90323E52A2FAF7700C0245B /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = B9042F452A2A20680092FB1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90323EA2A2FAFBF00C0245B /* AppDatabase.swift in Sources */,
 				B949ADA52A2B970A00129785 /* NetworkService.swift in Sources */,
 				B949ADA22A2B93B900129785 /* Weather.swift in Sources */,
 				B9042F582A2A21450092FB1A /* HomeView.swift in Sources */,
@@ -379,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B90323E52A2FAF7700C0245B /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B90323E62A2FAF7700C0245B /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B90323E52A2FAF7700C0245B /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9042F3C2A2A20680092FB1A /* Project object */;
 }
