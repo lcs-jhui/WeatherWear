@@ -25,8 +25,6 @@ struct HomeView: View {
             
             VStack{
                 
-                
-                
                 //Shows the location
                 HStack{
                     Image(systemName: "location.fill")
@@ -83,7 +81,12 @@ struct HomeView: View {
                         
                         VStack{
                             Text(currentWeather.description)
-                            Image(systemName: "sun.max")
+                            
+                            if let icon = weatherIcons[currentWeather.description] {
+                                Image(systemName: icon)
+                            } else {
+                                Image(systemName: "questionmark.square.dashed")
+                            }
                         }
                         .padding()
                         .background(Color("MainColor"))

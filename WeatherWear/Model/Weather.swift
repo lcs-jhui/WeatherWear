@@ -13,4 +13,23 @@ struct Weather: Codable {
     let description: String
 }
 
+
 let exampleWeather = Weather(temperature: "19 ℃", wind: "28 km/h", description: "Sunny")
+
+var weatherIcons = [
+
+    "Sunny" : "sun.max"
+    ,
+    "Partly cloudy" : "cloud.sun"
+    ,
+    "Patchy rain possible" : "cloud"
+    ,
+    "Light rain shower" : "cloud.rain"
+    ,
+    "Clear" : "sun.min"
+    ,
+    "Rain with thunderstorm" : "cloud.bolt.rain"
+    ,
+    "Rain" : "cloud.heavyrain"
+    
+]

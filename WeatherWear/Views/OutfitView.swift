@@ -33,11 +33,27 @@ struct OutfitView: View {
 
                     //Show humidity and precipitation
                     HStack{
-                        Text("\(weatherToShow.description) 😎")
-                            .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
-                            .foregroundColor(.white)
-                            .background(Color("MainColor"))
-                            .cornerRadius(.infinity)
+                        
+                        HStack{
+                            
+                            //Show the icon of the weather descirption
+                            if let icon = weatherIcons[weatherToShow.description] {
+                                
+                                Image(systemName: icon)
+                                    
+                            } else {
+                                Image(systemName: "questionmark.square.dashed")
+                            }
+                            
+                            Text(weatherToShow.description)
+                            
+                        }
+                        .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+                        .foregroundColor(.white)
+                        .background(Color("MainColor"))
+                        .cornerRadius(.infinity)
+                        
+                        //Show the wind speed
                         Text("Wind Speed: \(weatherToShow.wind)")
                             .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
                             .foregroundColor(.white)
@@ -49,8 +65,13 @@ struct OutfitView: View {
                 
                 //Show temperature
                 HStack{
-                    Image(systemName: "sun.max")
-                        .padding()
+                    if let icon = weatherIcons[weatherToShow.description] {
+                        
+                        Image(systemName: icon)
+                            
+                    } else {
+                        Image(systemName: "questionmark.square.dashed")
+                    }
 
                     Text(weatherToShow.temperature)
                         .padding()
