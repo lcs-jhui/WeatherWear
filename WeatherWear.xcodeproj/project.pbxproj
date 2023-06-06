@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90302ED2A2FBFFA007DB956 /* SuitableActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90302EC2A2FBFFA007DB956 /* SuitableActivitiesView.swift */; };
 		B90323E72A2FAF7700C0245B /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = B90323E62A2FAF7700C0245B /* Blackbird */; };
 		B90323EA2A2FAFBF00C0245B /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90323E92A2FAFBF00C0245B /* AppDatabase.swift */; };
 		B9042F482A2A20680092FB1A /* WeatherWearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9042F472A2A20680092FB1A /* WeatherWearApp.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90302EC2A2FBFFA007DB956 /* SuitableActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitableActivitiesView.swift; sourceTree = "<group>"; };
 		B90323E92A2FAFBF00C0245B /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		B9042F442A2A20680092FB1A /* WeatherWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9042F472A2A20680092FB1A /* WeatherWearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWearApp.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				B9042F572A2A21450092FB1A /* HomeView.swift */,
 				B9042F552A2A212F0092FB1A /* OutfitView.swift */,
+				B90302EC2A2FBFFA007DB956 /* SuitableActivitiesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				B90323EA2A2FAFBF00C0245B /* AppDatabase.swift in Sources */,
 				B949ADA52A2B970A00129785 /* NetworkService.swift in Sources */,
+				B90302ED2A2FBFFA007DB956 /* SuitableActivitiesView.swift in Sources */,
 				B949ADA22A2B93B900129785 /* Weather.swift in Sources */,
 				B9042F582A2A21450092FB1A /* HomeView.swift in Sources */,
 				B9042F482A2A20680092FB1A /* WeatherWearApp.swift in Sources */,

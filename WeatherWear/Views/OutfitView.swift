@@ -91,18 +91,28 @@ struct OutfitView: View {
                 
                     Spacer()
                 
+                //Title
+                Text("Activities To Do")
+                    .font(.largeTitle)
+                
+                //A list of the activities
                 List{
                     
                     ForEach (activites.results) { currentActivity in
                         
                         Text(currentActivity.name)
+                            .font(.title3)
+                        
                     }
                 }
+                .listStyle(.inset)
+                .border(.black)
+                .padding(.horizontal)
+                
+                Spacer()
                 
             }
-
         }
-       
     }
 }
 
