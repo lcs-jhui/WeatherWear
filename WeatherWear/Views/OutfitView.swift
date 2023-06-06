@@ -5,16 +5,26 @@
 //  Created by Justin Hui on 2/6/2023.
 //
 
+import Blackbird
 import SwiftUI
 
 struct OutfitView: View {
 
     //MARK: Stored Properties
+    
+    //Access the connection to the database
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
 
+    //Needed to show the date
     @State var currentDate: Date = Date()
 
     //Weather to show
     var weatherToShow: Weather
+    
+    //The list of activities for the weather
+    @BlackbirdLiveModels({ db in
+        try await Activity.read(from: db)
+    }) var activites
     
     //MARK: Computed Properties
     var body: some View {
@@ -132,5 +142,8 @@ struct OutfitView: View {
 struct OutfitView_Previews: PreviewProvider {
     static var previews: some View {
         OutfitView(weatherToShow: exampleWeather)
+        //Make the database avaiable to this view in Xcode previews
+        .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
+    
 }

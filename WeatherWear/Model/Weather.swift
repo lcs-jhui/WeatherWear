@@ -5,12 +5,20 @@
 //  Created by Justin Hui on 3/6/2023.
 //
 
+import Blackbird
 import Foundation
 
 struct Weather: Codable {
     let temperature: String
     let wind: String
     let description: String
+}
+
+struct Activity: BlackbirdModel {
+    @BlackbirdColumn var id: Int
+    @BlackbirdColumn var name: String
+    @BlackbirdColumn var temp_low: Int
+    @BlackbirdColumn var temp_high: Int
 }
 
 
@@ -31,5 +39,8 @@ var weatherIcons = [
     "Rain with thunderstorm" : "cloud.bolt.rain"
     ,
     "Rain" : "cloud.heavyrain"
+    ,
+    "Moderate rain" : "cloud.rain"
+
     
 ]
