@@ -89,49 +89,16 @@ struct OutfitView: View {
                 .bold()
                 .font(.largeTitle)
                 
-                
-                
-
-//                    //Show the outfit items and temperature
-//                    HStack{
-//                        Image(systemName: "sun.max")
-//                            .padding()
-//
-//                        Text(weatherToShow.temperature)
-//                            .padding()
-//                    }
-//                    .bold()
-//                    .font(.largeTitle)
-//
-//                    HStack{
-//
-//                        VStack{
-//                            Text("Item 1")
-//                                .padding()
-//
-//                            Text("Item 2")
-//                                .padding()
-//
-//                            Text("Item 3")
-//                                .padding()
-//                        }
-//
-//                        VStack{
-//                            Text("Item 4")
-//                                .padding()
-//
-//                            Text("Item 5")
-//                                .padding()
-//
-//                        }
-//
-//                    }
-//                    .padding()
-//                    .font(.largeTitle)
-//                    .border(Color.black)
-
                     Spacer()
-
+                
+                List{
+                    
+                    ForEach (activites.results) { currentActivity in
+                        
+                        Text(currentActivity.name)
+                    }
+                }
+                
             }
 
         }
