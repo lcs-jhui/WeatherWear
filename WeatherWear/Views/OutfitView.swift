@@ -96,18 +96,7 @@ struct OutfitView: View {
                     .font(.largeTitle)
                 
                 //A list of the activities
-                List{
-                    
-                    ForEach (activites.results) { currentActivity in
-                        
-                        Text(currentActivity.name)
-                            .font(.title3)
-                        
-                    }
-                }
-                .listStyle(.inset)
-                .border(.black)
-                .padding(.horizontal)
+                SuitableActivitiesView(filteredOn: weatherToShow.temperature)
                 
                 Spacer()
                 

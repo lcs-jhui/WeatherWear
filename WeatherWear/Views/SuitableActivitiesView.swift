@@ -15,13 +15,9 @@ struct SuitableActivitiesView: View {
     //Needed to query database
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     
-    //Weather to show
-    var temperatureForWeather: Weather
-    
     //The list of activities
-    @BlackbirdLiveQuery(tableName: "Activity", { db in
-        try await db.query("SELECT name FROM Activity WHERE temp_low <= -10 AND temp_high >= -10")
-    }) var activities
+    @BlackbirdLiveModels var activities: Blackbird.LiveResults<Activity>
+
     
     var body: some View {
         
@@ -41,12 +37,19 @@ struct SuitableActivitiesView: View {
     }
     
     //MARK: Initializer
-    
+    init(filteredOn temperature: String) {
+        
+        //Initialize the live model
+        _activities = BlackbirdLiveModels ({ db in
+            try await Activity.read(from: db, sqlWhere: "temp_low <= \(temperature) AND temp_high >= \(temperature)")
+        })
+        
+    }
 }
 
 struct SuitableActivitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        SuitableActivitiesView(temperatureForWeather: exampleWeather)
+        SuitableActivitiesView(filteredOn: "19")
         //Make the database avaiable to this view in Xcode previews
             .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
