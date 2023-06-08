@@ -126,6 +126,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
+                    //Button that takes the user to the activities list
                     NavigationLink(destination: {
                         OutfitView(weatherToShow: currentWeather)
                     }, label: {

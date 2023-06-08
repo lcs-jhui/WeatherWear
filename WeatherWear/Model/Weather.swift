@@ -9,7 +9,7 @@ import Blackbird
 import Foundation
 
 struct Weather: Codable {
-    let temperature: String
+    var temperature: String
     let wind: String
     let description: String
 }
@@ -22,7 +22,7 @@ struct Activity: BlackbirdModel {
 }
 
 
-let exampleWeather = Weather(temperature: "19 ℃", wind: "28 km/h", description: "Sunny")
+let exampleWeather = Weather(temperature: "19", wind: "28 km/h", description: "Sunny")
 
 var weatherIcons = [
 

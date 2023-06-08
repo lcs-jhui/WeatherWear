@@ -26,6 +26,7 @@ struct OutfitView: View {
         try await Activity.read(from: db)
     }) var activites
     
+   
     //MARK: Computed Properties
     var body: some View {
         NavigationView{

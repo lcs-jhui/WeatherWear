@@ -45,7 +45,10 @@ struct NetworkService {
             let decoder = JSONDecoder()
             
             // Use the decoder object to convert the raw data into an instance of our Swift data type
-            let decodedData = try decoder.decode(Weather.self, from: data)
+            var decodedData = try decoder.decode(Weather.self, from: data)
+            
+            //Clean up temperature
+            decodedData.temperature = decodedData.temperature.replacingOccurrences(of: " °C", with: "")
 
             // If we got here, decoding succeeded, return the instance of our data type
             return decodedData
