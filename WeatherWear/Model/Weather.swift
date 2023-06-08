@@ -41,6 +41,8 @@ var weatherIcons = [
     "Rain" : "cloud.heavyrain"
     ,
     "Moderate rain" : "cloud.rain"
+    ,
+    "Patchy light rain with thunder" : "cloud.bolt.rain"
 
     
 ]

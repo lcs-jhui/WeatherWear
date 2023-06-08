@@ -84,7 +84,7 @@ struct OutfitView: View {
                         Image(systemName: "questionmark.square.dashed")
                     }
 
-                    Text(weatherToShow.temperature)
+                    Text("\(weatherToShow.temperature) °C")
                         .padding()
                 }
                 .bold()

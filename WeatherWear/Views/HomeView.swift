@@ -69,7 +69,7 @@ struct HomeView: View {
                     Spacer()
                     
                     //A system image of the weather and the degrees in celsius
-                    Text(currentWeather.temperature)
+                    Text("\(currentWeather.temperature) °C")
                         .padding()
                         .font(.largeTitle)
                         .bold()
